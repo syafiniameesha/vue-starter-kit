@@ -1,7 +1,10 @@
 <template>
     <div class="app">
         <p>Testing Hompage</p>
-        <el-button type="primary" @click="showPopup = true">Popup</el-button>
+        <div class="grp-btn">
+            <el-button type="primary" plain @click="showPopup = true">Popup</el-button>
+            <el-button type="primary" @click="handleNextPage()">Next Page</el-button>
+        </div>
         
         <!-- show dialog project -->
         <Base-Popup 
@@ -26,19 +29,13 @@ export default {
     methods: {
         closePopup() {
             this.showPopup = false;
+        },
+        handleNextPage() {
+            this.$router.push({ path: '/next-page' });
         }
     },
 };
 </script>
 
 <style lang="scss" scoped>
-.app {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    justify-content: center;
-}
 </style>
